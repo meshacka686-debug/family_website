@@ -28,6 +28,11 @@ INSTALLED_APPS = [
 
 # Middleware
 ALLOWED_HOSTS = ["family-website-3.onrender.com", "localhost", "127.0.0.1"]
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
