@@ -57,20 +57,20 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'family_website.wsgi.application'
-
-import dj_database_url
-from pathlib import Path
 import os
+from pathlib import Path
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 DATABASES = {
     "default": dj_database_url.config(
-        default=f"sqlite:///{BASE_DIR}/db.sqlite3",  # fallback for local dev or no DATABASE_URL
+        default=f"sqlite:///{BASE_DIR}/db.sqlite3",  # fallback if DATABASE_URL is not set
         conn_max_age=600,
         ssl_require=False
     )
 }
+
 
 
 # Password validation
