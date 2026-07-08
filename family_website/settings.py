@@ -27,6 +27,8 @@ INSTALLED_APPS = [
 ]
 
 # Middleware
+ALLOWED_HOSTS = ["family-website-3.onrender.com", "localhost", "127.0.0.1"]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
