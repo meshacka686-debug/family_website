@@ -56,7 +56,7 @@ ALLOWED_HOSTS = ["your-app-name.onrender.com"]
 
 MIDDLEWARE = [
       "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",  # 👈 add this
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # 👈 add thisc
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
