@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+  <h2 class="mb-4">My Gallery</h2>
+
+
+  <div class="row">
+    {% for photo in photos %}
+      <div class="col-md-4 mb-4">
+        <div class="card shadow">
+          <img src="{{ photo.image.url }}" class="card-img-top" style="height:250px; object-fit:cover;">
+          <div class="card-body">
+            <p class="card-text">{{ photo.caption }}</p>
+            <a href="{% url 'accounts:edit_photo' photo.id %}" class="btn btn-primary btn-sm">✏️ Edit</a>
+            <a href="{% url 'accounts:delete_photo' photo.id %}" class="btn btn-danger btn-sm">🗑 Delete</a>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p>You haven’t uploaded any photos yet.</p>
+        <!-- Upload form -->
+  <form method="post" enctype="multipart/form-data" class="mb-4">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">📤 Upload Photo</button>
+  </form>
+   
+  </div>
+</div>
+ {% endfor %}
+{% endblock %}

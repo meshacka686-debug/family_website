@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+  <h2>🚫 Access Denied</h2>
+  <p>You don’t have permission to perform this action.</p>
+  <a href="{% url 'accounts:gallery_view' %}" class="btn btn-primary">Back to Gallery</a>
+</div>
+{% endblock %}

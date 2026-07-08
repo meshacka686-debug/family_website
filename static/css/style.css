@@ -1,0 +1,17 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+h2 {
+  color: #007bff;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.btn-lg {
+  padding: 12px 24px;
+  font-size: 18px;
+}

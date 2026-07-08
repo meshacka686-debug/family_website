@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-lg p-4">
+    <h2 class="mb-4">Edit Photo</h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success mt-3">💾 Save Changes</button>
+      <a href="{% url 'accounts:gallery_view' %}" class="btn btn-secondary mt-3">⬅️ Back to Gallery</a>
+    </form>
+  </div>
+</div>
+{% endblock %}
