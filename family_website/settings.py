@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-import dj_database_url
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,8 +28,6 @@ INSTALLED_APPS = [
 
 # Middleware
 ALLOWED_HOSTS = ["family-website-3.onrender.com", "localhost", "127.0.0.1"]
-MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 

@@ -14,8 +14,8 @@
     {% for photo in photos %}
       <div class="col-md-4 mb-4">
         <div class="card shadow">
-          <img src="{{ photo.image.url }}" class="card-img-top" style="height:250px; object-fit:cover;">
-          <div class="card-body">
+         <img src="{% static 'images/default-avatar.png' %}" alt="Default Avatar">
+
             <p class="card-text">{{ photo.caption }}</p>
             <a href="{% url 'accounts:edit_photo' photo.id %}" class="btn btn-primary btn-sm">✏️ Edit</a>
             <a href="{% url 'accounts:delete_photo' photo.id %}" class="btn btn-danger btn-sm">🗑 Delete</a>
