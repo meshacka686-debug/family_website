@@ -64,7 +64,6 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Database (SQLite fallback, Postgres if DATABASE_URL is set)
 DATABASES = {
     "default": dj_database_url.config(
         default=f"sqlite:///{BASE_DIR}/db.sqlite3",  # fallback for local dev or no DATABASE_URL
