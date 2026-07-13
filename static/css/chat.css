@@ -1,0 +1,35 @@
+.chat-bubble {
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.chat-body {
+  background: #e5ddd5; /* WhatsApp-like background */
+}
+
+.chat-header {
+  background: #4705df;
+}
+
+.chat-footer {
+  background: #f0f0f0;
+}
+
+.chat-footer input.form-control {
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+.chat-footer input.form-control:focus {
+  border-color: #2908e0; /* WhatsApp green */
+  box-shadow: 0 0 5px rgba(2, 21, 190, 0.5);
+}
+
+.chat-footer button.btn-success {
+  background-color: #0019f7; /* WhatsApp green */
+  border: none;
+}
+
+.chat-footer button.btn-success:hover {
+  background-color: #0508e7;
+}
