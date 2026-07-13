@@ -4,11 +4,11 @@
 }
 
 .chat-body {
-  background: #e5ddd5; /* WhatsApp-like background */
+  background: #f0f2f5; /* Messenger-like background */
 }
 
 .chat-header {
-  background: #4705df;
+  background: #0d6efd; /* Bootstrap primary blue */
 }
 
 .chat-footer {
@@ -21,15 +21,15 @@
 }
 
 .chat-footer input.form-control:focus {
-  border-color: #2908e0; /* WhatsApp green */
-  box-shadow: 0 0 5px rgba(2, 21, 190, 0.5);
+  border-color: #0d6efd; /* Blue focus */
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
 }
 
-.chat-footer button.btn-success {
-  background-color: #0019f7; /* WhatsApp green */
+.chat-footer button.btn-primary {
+  background-color: #0d6efd; /* Blue send button */
   border: none;
 }
 
-.chat-footer button.btn-success:hover {
-  background-color: #0508e7;
+.chat-footer button.btn-primary:hover {
+  background-color: #0b5ed7;
 }

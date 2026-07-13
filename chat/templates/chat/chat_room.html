@@ -3,8 +3,8 @@
 <div class="container-fluid chat-container">
 
   <!-- Chat header -->
-  <div class="chat-header d-flex align-items-center p-3 bg-success text-white">
-    <img src="/static/images/family.png" class="rounded-circle me-2" width="40" height="40">
+  <div class="chat-header d-flex align-items-center p-3 bg-primary text-white">
+    <img src="/static/images/group-avatar.png" class="rounded-circle me-2" width="40" height="40">
     <div>
       <h5 class="mb-0">Family Chat Room</h5>
       <small>Group conversation</small>
@@ -12,7 +12,7 @@
   </div>
 
   <!-- Chat body -->
-  <div class="chat-body p-3" style="height:70vh; overflow-y:auto; background:#e5ddd5;">
+  <div class="chat-body p-3" style="height:70vh; overflow-y:auto; background:#f0f2f5;">
     {% for message in messages %}
       <div class="d-flex mb-3 {% if message.sender == request.user %}justify-content-end{% endif %}">
         {% if message.sender != request.user %}
@@ -20,7 +20,7 @@
             <img src="{{ message.sender.profile.picture.url }}" class="rounded-circle me-2" width="35" height="35">
           {% endif %}
         {% endif %}
-        <div class="chat-bubble p-2 rounded {% if message.sender == request.user %}bg-success text-white{% else %}bg-light{% endif %}">
+        <div class="chat-bubble p-2 rounded {% if message.sender == request.user %}bg-primary text-white{% else %}bg-light{% endif %}">
           <p class="mb-1">{{ message.text }}</p>
           <small class="text-muted">{{ message.timestamp|date:"M d, H:i" }}</small>
         </div>
@@ -36,7 +36,7 @@
       {% csrf_token %}
       <input type="text" name="text" class="form-control rounded-pill shadow-sm me-2" 
              placeholder="Type a message..." style="padding:10px 15px;">
-      <button type="submit" class="btn btn-success rounded-circle shadow-sm px-3 py-2">
+      <button type="submit" class="btn btn-primary rounded-circle shadow-sm px-3 py-2">
         <i class="bi bi-send-fill"></i>
       </button>
     </form>
