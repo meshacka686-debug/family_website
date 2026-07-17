@@ -5,11 +5,7 @@ from firebase_admin import credentials, storage
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# 🔐 Firebase setup
-cred = credentials.Certificate("family_website/firebase_credentials.json")
-firebase_admin.initialize_app(cred, {
-    'storageBucket': 'familywebsite-c4ef7.appspot.com'
-})
+
 
 # SECURITY
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "unsafe-secret-key-for-dev")
