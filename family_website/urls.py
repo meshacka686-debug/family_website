@@ -3,7 +3,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.shortcuts import render
-
+from . import views
 def dashboard_view(request):
     return render(request, "dashboard.html")  # 👈 create this template
 
@@ -14,6 +14,7 @@ urlpatterns = [
     path('gallery/', include('gallery.urls')),
   path("notifications/", include("notifications.urls")),
     path('chat/', include('chat.urls')),
+     path("test-firebase/", views.test_firebase, name="test_firebase"),
 ]
 
 if settings.DEBUG:
