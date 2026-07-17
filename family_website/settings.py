@@ -1,18 +1,14 @@
 import os
 from pathlib import Path
-import firebase_admin
-from firebase_admin import credentials, storage
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 
 # SECURITY
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "unsafe-secret-key-for-dev")
 DEBUG = os.environ.get("DEBUG", "True") == "True"
 ALLOWED_HOSTS = os.environ.get(
     "ALLOWED_HOSTS",
-    "127.0.0.1,localhost,family-website-3.onrender.com"
+    "127.0.0.1,localhost,family-website.up.railway.app"
 ).split(",")
 
 # Applications
@@ -43,11 +39,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'family_website.urls'
 
-
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, "templates")],  # 👈 point to the top-level templates folder
+        "DIRS": [BASE_DIR / "templates"],  # 👈 top-level templates folder
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -60,11 +55,9 @@ TEMPLATES = [
     },
 ]
 
-
 WSGI_APPLICATION = 'family_website.wsgi.application'
 
 # ✅ Database
-# Use SQLite locally, PostgreSQL in production
 if os.environ.get("USE_SQLITE", "True") == "True":
     DATABASES = {
         'default': {
