@@ -15,17 +15,18 @@ from gallery.models import Photo
 
 # ------------------ GALLERY ------------------
 
+
 @login_required
 def gallery_view(request):
     """Show only the logged-in user's own gallery"""
-    photos = Photo.objects.filter(user=request.user)
+    photos = request.user.gallery_photos.all()  # 👈 use related_name
     if request.method == "POST":
         form = PhotoForm(request.POST, request.FILES)
         if form.is_valid():
             photo = form.save(commit=False)
             photo.user = request.user
             photo.save()
-                  # 👇 Create a notification for all users
+            # 👇 Create a notification for all users
             note = Notification.objects.create(
                 message=f"{request.user.username} uploaded a new photo!"
             )
@@ -35,7 +36,6 @@ def gallery_view(request):
     else:
         form = PhotoForm()
     return render(request, "gallery/gallery.html", {"photos": photos, "form": form})
-
 
 @login_required
 def upload_photo(request):
@@ -95,7 +95,7 @@ def delete_photo(request, photo_id):
 def user_gallery(request, user_id):
     """View another user's gallery (read-only)"""
     other_user = get_object_or_404(User, id=user_id)
-    photos = Photo.objects.filter(user=other_user)
+    photos = other_user.gallery_photos.all()  # 👈 use related_name
     return render(request, "accounts/user_gallery.html", {
         "other_user": other_user,
         "photos": photos
