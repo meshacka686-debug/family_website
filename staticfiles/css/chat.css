@@ -1,0 +1,35 @@
+.chat-bubble {
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.chat-body {
+  background: #f0f2f5; /* Messenger-like background */
+}
+
+.chat-header {
+  background: #0d6efd; /* Bootstrap primary blue */
+}
+
+.chat-footer {
+  background: #f0f0f0;
+}
+
+.chat-footer input.form-control {
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+.chat-footer input.form-control:focus {
+  border-color: #0d6efd; /* Blue focus */
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+}
+
+.chat-footer button.btn-primary {
+  background-color: #0d6efd; /* Blue send button */
+  border: none;
+}
+
+.chat-footer button.btn-primary:hover {
+  background-color: #0b5ed7;
+}
